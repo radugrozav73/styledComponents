@@ -1,64 +1,40 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useRouteMatch } from "react-router-dom";
+import LinkList from "./LinkList";
 
 function NavbarComponent({ className }) {
+  const path = useRouteMatch("/services");
+
+  console.log(path)
   return (
     <nav className={className}>
       <div>
-        <h2>salut eu</h2>
-        <ul>
-          <li>
-            <Link to="/work">Work</Link>
-          </li>
-          <li>
-            <Link to="/services">Services</Link>
-          </li>
-          <li>
-            <Link to="/about">About Us</Link>
-          </li>
-          <li>
-            <Link to="/insights">Insights</Link>
-          </li>
-        </ul>
+        <h2>Balkan Bros.</h2>
+        <LinkList color={path ? "#ffffff" : "#0f2825"} />
       </div>
     </nav>
   );
 }
 
 const Navbar = styled(NavbarComponent)`
-  height: 100px;
+  height: 160px;
   width: 100%;
   background-color: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  & div {
+  & h2 {
+    color: #0f2825;
+    font-size: 1.8rem;
+  }
+
+  > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
     height: 100%;
-
-    & ul {
-      display: flex;
-      list-style: none;
-
-      & li {
-        padding: 10px;
-        font-size: 1.4rem;
-        letter-spacing: 1px;
-        word-spacing: 0px;
-        font-weight: 300;
-        text-align: left;
-
-        & a {
-          cursor: pointer;
-          text-decoration:none;
-          color:black;
-        }
-      }
-    }
   }
 `;
 

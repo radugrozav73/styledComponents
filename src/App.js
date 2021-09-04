@@ -7,10 +7,10 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route to="/" />
-        <Route to="/" />
-        <Route to="/" />
-        <Route to="/" />
+        <Route to="/work" />
+        <Route to="/services" />
+        <Route to="/insights" />
+        <Route to="/about" />
       </Switch>
     </Router>
   );
