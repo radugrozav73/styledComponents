@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import {
   H1Title,
-  SpanDecription,
-  SpanHighLights,
+  DescriptionDetails,
+  DescriptionHighlight,
 } from "../styledcomponents/headings.style";
 import ReactPlayer from "react-player";
 
@@ -20,7 +20,7 @@ function TopHomeSectionComponent({ className }) {
           className="videPlayer"
           width="1480px"
           height="838px"
-          url="https://www.youtube.com/watch?v=MzxmZ5HrVgQ"
+          url="https://www.youtube.com/watch?v=kvHFdk7xYwM"
         />
         <div class="sponsorsLogo">
           <img src="/progressive.svg" alt="progressive" />
@@ -32,40 +32,42 @@ function TopHomeSectionComponent({ className }) {
         <div className="shortDescriptionWrapper">
           <div className="shortDescriptions">
             <div className="description">
-              <SpanHighLights>~$250B</SpanHighLights>
-              <SpanDecription>
+              <DescriptionHighlight color="#ffffff">
+                ~$250B
+              </DescriptionHighlight>
+              <DescriptionDetails color="#a6c1bf">
                 - combined valuation of companies we’ve partnered with.{" "}
-              </SpanDecription>
+              </DescriptionDetails>
             </div>
             <div className="description">
-              <SpanHighLights>12</SpanHighLights>
-              <SpanDecription>
+              <DescriptionHighlight color="#ffffff">12</DescriptionHighlight>
+              <DescriptionDetails color="#a6c1bf">
                 - combined valuation of companies we’ve partnered with.{" "}
-              </SpanDecription>
+              </DescriptionDetails>
             </div>
             <div className="description">
-              <SpanHighLights>
+              <DescriptionHighlight color="#ffffff">
                 Our clients are the companies and startups who make the world go
                 round – they treat diseases, move parcels, insure cars, process
                 payments, create jobs, rent homes and publish news. Vast and
                 complex businesses like these need digital experiences that are
                 just as people-friendly as they are robust and scalable.
-              </SpanHighLights>
+              </DescriptionHighlight>
             </div>
             <div className="description">
-              <SpanHighLights>
+              <DescriptionHighlight color="#ffffff">
                 Our specialized team of designers, developers, illustrators and
                 project managers work with streamlined processes to break
                 through organizational roadblocks. We translate research into
                 solutions, crafting thoughtful and unified brands, apps,
                 websites, interfaces and systems.
-              </SpanHighLights>
+              </DescriptionHighlight>
             </div>
             <div className="description">
-              <SpanHighLights>
+              <DescriptionHighlight color="#ffffff">
                 Through challenging core assumptions, we shape the products and
                 services that improve the lives of thousands every single day.
-              </SpanHighLights>
+              </DescriptionHighlight>
             </div>
           </div>
         </div>

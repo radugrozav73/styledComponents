@@ -15,14 +15,14 @@ export const H1Title = styled.h1`
   text-align: center;
 `;
 
-export const SpanHighLights = styled.span`
-  color: #ffffff;
+export const DescriptionHighlight = styled.span`
+  color: ${({ color }) => color};
   font-size: 3.5rem;
   letter-spacing: -1px;
   font-weight: 600;
 `;
-export const SpanDecription = styled.span`
+export const DescriptionDetails = styled.span`
   font-size: 3.5rem;
-  color: rgb(166, 193, 191);
-  letter-spacing: -.5px;
+  color: ${({color}) => color};
+  letter-spacing: -0.5px;
 `;

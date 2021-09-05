@@ -3,29 +3,64 @@ import LinkList from "./LinksList";
 import { useLocation, useHistory } from "react-router-dom";
 import GlobalStyle from "../../GlobalStyles";
 import { H2Logo } from "../styledcomponents/headings.style";
+import { useLayoutEffect, useState } from "react";
 
 function NavbarComponent({ className }) {
   const location = useLocation();
-  const colorSwitchOnRoute =
+  const history = useHistory();
+
+  const [pagePositionColor, setPagePositionColor] = useState(true);
+
+  let colorSwitchOnRoute =
     location.pathname === "/" || location.pathname === "/services"
       ? true
       : false;
 
-  const history = useHistory();
-
   const changeLocation = () => history.push("/");
+
+  const changeBackground = () => {
+    if (window.scrollY === 0) {
+      return;
+    }
+    if (window.scrollY > 3400 && pagePositionColor) {
+      setPagePositionColor(false);
+    } else if (
+      (location.pathname === "/" || location.pathname === "/services") &&
+      window.scrollY < 3400 &&
+      !pagePositionColor
+    ) {
+      setPagePositionColor(true);
+    }
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener("scroll", changeBackground);
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  });
 
   return (
     <nav className={className}>
       <div>
         <H2Logo
           onClick={changeLocation}
-          colorSwitchOnRoute={colorSwitchOnRoute}
+          colorSwitchOnRoute={
+            pagePositionColor ? colorSwitchOnRoute : pagePositionColor
+          }
         >
           Balkan Bros.
         </H2Logo>
-        <LinkList colorSwitchOnRoute={colorSwitchOnRoute} />
-        <GlobalStyle colorSwitchOnRoute={colorSwitchOnRoute} />
+        <LinkList
+          colorSwitchOnRoute={
+            pagePositionColor ? colorSwitchOnRoute : pagePositionColor
+          }
+        />
+        <GlobalStyle
+          colorSwitchOnRoute={
+            pagePositionColor ? colorSwitchOnRoute : pagePositionColor
+          }
+        />
       </div>
     </nav>
   );
