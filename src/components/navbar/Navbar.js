@@ -1,18 +1,31 @@
 import styled from "styled-components";
 import LinkList from "./LinksList";
-import { useRouteMatch } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import GlobalStyle from "../../GlobalStyles";
-import { H2 } from "../styledcomponents/headings.style";
+import { H2Logo } from "../styledcomponents/headings.style";
 
 function NavbarComponent({ className }) {
-  const colorSwitchOnServiceRoute = useRouteMatch("/services") ? true : false;
+  const location = useLocation();
+  const colorSwitchOnRoute =
+    location.pathname === "/" || location.pathname === "/services"
+      ? true
+      : false;
+
+  const history = useHistory();
+
+  const changeLocation = () => history.push("/");
 
   return (
     <nav className={className}>
       <div>
-        <H2 colorSwitchOnServiceRoute={colorSwitchOnServiceRoute }>Balkan Bros.</H2>
-        <LinkList colorSwitchOnServiceRoute={colorSwitchOnServiceRoute} />
-        <GlobalStyle colorSwitchOnServiceRoute={colorSwitchOnServiceRoute} />
+        <H2Logo
+          onClick={changeLocation}
+          colorSwitchOnRoute={colorSwitchOnRoute}
+        >
+          Balkan Bros.
+        </H2Logo>
+        <LinkList colorSwitchOnRoute={colorSwitchOnRoute} />
+        <GlobalStyle colorSwitchOnRoute={colorSwitchOnRoute} />
       </div>
     </nav>
   );
@@ -29,7 +42,7 @@ const Navbar = styled(NavbarComponent)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 80%;
     height: 100%;
   }
 `;
