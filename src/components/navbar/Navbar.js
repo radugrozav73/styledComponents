@@ -1,16 +1,18 @@
 import styled from "styled-components";
+import LinkList from "./LinksList";
 import { useRouteMatch } from "react-router-dom";
-import LinkList from "./LinkList";
+import GlobalStyle from "../../GlobalStyles";
+import { H2 } from "../styledcomponents/headings.style";
 
 function NavbarComponent({ className }) {
-  const path = useRouteMatch("/services");
+  const onServiceRoute = useRouteMatch("/services") ? true : false;
 
-  console.log(path)
   return (
     <nav className={className}>
       <div>
-        <h2>Balkan Bros.</h2>
-        <LinkList color={path ? "#ffffff" : "#0f2825"} />
+        <H2 onServiceRoute={onServiceRoute }>Balkan Bros.</H2>
+        <LinkList onServiceRoute={onServiceRoute} />
+        <GlobalStyle onServiceRoute={onServiceRoute} />
       </div>
     </nav>
   );
@@ -19,15 +21,9 @@ function NavbarComponent({ className }) {
 const Navbar = styled(NavbarComponent)`
   height: 160px;
   width: 100%;
-  background-color: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  & h2 {
-    color: #0f2825;
-    font-size: 1.8rem;
-  }
 
   > div {
     display: flex;
