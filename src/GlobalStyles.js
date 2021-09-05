@@ -7,8 +7,8 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
             Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        background-color: ${({ onServiceRoute }) =>
-          onServiceRoute ? "#0F2825" : "#ffffff"};
+        background-color: ${({ colorSwitchOnServiceRoute }) =>
+        colorSwitchOnServiceRoute ? "#0F2825" : "#ffffff"};
         transition: .3s ease-in-out;
     }
 `;

@@ -5,14 +5,14 @@ import GlobalStyle from "../../GlobalStyles";
 import { H2 } from "../styledcomponents/headings.style";
 
 function NavbarComponent({ className }) {
-  const onServiceRoute = useRouteMatch("/services") ? true : false;
+  const colorSwitchOnServiceRoute = useRouteMatch("/services") ? true : false;
 
   return (
     <nav className={className}>
       <div>
-        <H2 onServiceRoute={onServiceRoute }>Balkan Bros.</H2>
-        <LinkList onServiceRoute={onServiceRoute} />
-        <GlobalStyle onServiceRoute={onServiceRoute} />
+        <H2 colorSwitchOnServiceRoute={colorSwitchOnServiceRoute }>Balkan Bros.</H2>
+        <LinkList colorSwitchOnServiceRoute={colorSwitchOnServiceRoute} />
+        <GlobalStyle colorSwitchOnServiceRoute={colorSwitchOnServiceRoute} />
       </div>
     </nav>
   );

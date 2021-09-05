@@ -43,8 +43,8 @@ const LinksList = styled(LinksListComponent)`
     & a {
       cursor: pointer;
       text-decoration: none;
-      color: ${({ onServiceRoute }) =>
-        onServiceRoute ? "#ffffff" : "#0F2825"};
+      color: ${({ colorSwitchOnServiceRoute }) =>
+        colorSwitchOnServiceRoute ? "#ffffff" : "#0F2825"};
       position: relative;
       transition: 0.3s ease-in-out;
 
@@ -53,8 +53,8 @@ const LinksList = styled(LinksListComponent)`
         position: absolute;
         height: 2px;
         width: 0;
-        background-color: ${({ onServiceRoute }) =>
-          onServiceRoute ? "#ffffff" : "#0F2825"};
+        background-color: ${({ colorSwitchOnServiceRoute }) =>
+          colorSwitchOnServiceRoute ? "#ffffff" : "#0F2825"};
         bottom: -5px;
         left: 0;
         transition: 0.3s ease-in-out;
@@ -65,8 +65,8 @@ const LinksList = styled(LinksListComponent)`
         position: absolute;
         height: 2px;
         width: 100%;
-        background-color: ${({ onServiceRoute }) =>
-          onServiceRoute ? "#ffffff" : "#0F2825"};
+        background-color: ${({ colorSwitchOnServiceRoute }) =>
+          colorSwitchOnServiceRoute ? "#ffffff" : "#0F2825"};
         bottom: -5px;
         transition: 0.3s ease-in-out;
         left: 0;
@@ -78,8 +78,8 @@ const LinksList = styled(LinksListComponent)`
         position: absolute;
         height: 2px;
         width: 100%;
-        background-color: ${({ onServiceRoute }) =>
-          onServiceRoute ? "#ffffff" : "#0F2825"};
+        background-color: ${({ colorSwitchOnServiceRoute }) =>
+          colorSwitchOnServiceRoute ? "#ffffff" : "#0F2825"};
         bottom: -5px;
         transition: 0.3s ease-in-out;
         left: 0;
